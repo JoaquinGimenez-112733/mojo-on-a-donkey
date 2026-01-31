@@ -7,6 +7,7 @@ const SPEED = 20
 @onready var interact_area: Area3D = $InteractArea
 @onready var ring: MeshInstance3D = $Ring
 @onready var buff_area: Area3D = $BuffArea
+var t : Tween
 
 const METRONOMO = preload("uid://bqkq4o71cbe0h")
 var metronomo_ui : Control = null
@@ -27,6 +28,7 @@ func _process(delta: float) -> void:
 	var target_vel := Vector3.ZERO
 
 	if input_vec != Vector2.ZERO:
+		t.kill()
 		inerciando = false
 		var dir := Vector3(input_vec.x, 0, input_vec.y).normalized()
 		target_vel = dir * SPEED
@@ -41,7 +43,7 @@ func _process(delta: float) -> void:
 	else: 
 		if inerciando == false:
 			inerciando = true
-			var t = get_tree().create_tween()
+			t = get_tree().create_tween()
 			t.set_ease(Tween.EASE_OUT)
 			t.tween_property(self, "velocity", Vector3.ZERO, 0.55 )
 		#velocity = Vector3.ZERO

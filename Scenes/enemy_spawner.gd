@@ -21,10 +21,14 @@ func _spawn_enemy():
 		return
 
 	var enemy = enemy_scene.instantiate()
+	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_point.global_position
 
 	if enemy.has_method("set_target"):
 		enemy.set_target(target_position)
-
-	get_tree().current_scene.add_child(enemy)
+	
 	spawned += 1
+
+
+func _on_base_dead() -> void:
+	timer.stop()

@@ -5,6 +5,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hghv2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]
+radius = 0.5136719
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1086858386 groups=["enemies"]]
 script = ExtResource("1_hghv2")
@@ -12,7 +13,8 @@ script = ExtResource("1_hghv2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1255003794]
 mesh = SubResource("CapsuleMesh_hghv2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2006664619 groups=["enemies"]]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2006664619]
+transform = Transform3D(0.99985194, -0.017208098, 0, 0.017208098, 0.99985194, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_1f0kj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1241366952]

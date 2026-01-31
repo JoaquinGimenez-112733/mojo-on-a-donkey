@@ -30,9 +30,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		pass
 		#body.set_can_interact(false)
 		
-func get_buff():
-	print("buffeada")
-
 func _on_area_attack_body_exited(body: Node3D) -> void:
 	if body.is_in_group("enemies"):
 		targets.erase(body)
@@ -51,7 +48,6 @@ func _shoot(target):
 	
 	
 func _on_area_attack_body_entered(body: Node3D) -> void:
-	print(body.name)
-	
+		
 	if body.is_in_group("enemies"):
 		targets.append(body)
