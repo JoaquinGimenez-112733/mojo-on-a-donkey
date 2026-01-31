@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 const SPEED = 20
-var can_interact : bool = false
+
 @onready var hud: Control = $HUD
 @onready var interact_area: Area3D = $InteractArea
 
@@ -32,6 +32,3 @@ func _process(delta: float) -> void:
 	else:
 		velocity.y = 0.0
 	move_and_slide()
-	
-func set_can_interact(flag):
-	can_interact = flag

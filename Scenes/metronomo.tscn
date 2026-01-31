@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bqkq4o71cbe0h"]
+
+[ext_resource type="Texture2D" uid="uid://0jaydh3qrgo6" path="res://icon.svg" id="1_bchvc"]
+[ext_resource type="Script" uid="uid://d2yxy5gi2pdgq" path="res://Scripts/metronomo.gd" id="1_nj1a6"]
+[ext_resource type="AudioStream" uid="uid://vgokdofu88ox" path="res://Assets/Songs/Rhythmortis.mp3" id="2_53yki"]
+
+[node name="Metronomo" type="Control" unique_id=1746553637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nj1a6")
+
+[node name="Song" type="AudioStreamPlayer2D" parent="." unique_id=804190460]
+stream = ExtResource("2_53yki")
+
+[node name="Barra" type="ColorRect" parent="." unique_id=373962862]
+layout_mode = 0
+offset_right = 438.0
+offset_bottom = 43.0
+color = Color(1, 0, 0, 1)
+
+[node name="Marcador" type="TextureRect" parent="." unique_id=1965301155]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 49.0
+offset_bottom = 45.0
+texture = ExtResource("1_bchvc")
+expand_mode = 1
