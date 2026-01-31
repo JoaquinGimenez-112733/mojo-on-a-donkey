@@ -21,14 +21,19 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 
 	var input_vec := Input.get_vector("LEFT","RIGHT", "UP", "DOWN")
+	var target_vel := Vector3.ZERO
 
 	if input_vec != Vector2.ZERO:
-		var dir := Vector3(input_vec.x, 0, input_vec.y)
-		dir = dir.normalized()
-		velocity += dir * delta * SPEED
-		#velocity.x += clampf(dir.x * delta * SPEED, 0.0, 5000.0)
-		#velocity.y += clampf(dir.y * delta * SPEED, 0.0, 0.0)
-		#velocity.z += clampf(dir.z * delta * SPEED, 0.0, 5000.0)
+		var dir := Vector3(input_vec.x, 0, input_vec.y).normalized()
+		target_vel = dir * SPEED
+		#var dir := Vector3(input_vec.x, 0, input_vec.y)
+		#dir = dir.normalized()
+		#velocity += dir * delta * SPEED
+		##velocity.x += clampf(dir.x * delta * SPEED, 0.0, 5000.0)
+		##velocity.y += clampf(dir.y * delta * SPEED, 0.0, 0.0)
+		##velocity.z += clampf(dir.z * delta * SPEED, 0.0, 5000.0)
+		velocity.x = move_toward(velocity.x, target_vel.x, SPEED  * delta)
+		velocity.z = move_toward(velocity.z, target_vel.z, SPEED  * delta)
 	if not is_on_floor():
 		velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta
 	else:
