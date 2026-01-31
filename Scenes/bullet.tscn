@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyof53uxqmruj"]
+
+[ext_resource type="Script" uid="uid://cvn40ibo44uxo" path="res://Scripts/bullet.gd" id="1_xjght"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mw4s"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4mw4s"]
+material = SubResource("StandardMaterial3D_4mw4s")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4mw4s"]
+
+[node name="Bullet" type="Area3D" unique_id=473674495]
+script = ExtResource("1_xjght")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=413619870]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("SphereMesh_4mw4s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1227333987]
+shape = SubResource("SphereShape3D_4mw4s")

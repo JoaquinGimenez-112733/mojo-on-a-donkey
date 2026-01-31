@@ -19,3 +19,6 @@ func play_build_effect():
 	t.set_trans(Tween.TRANS_BOUNCE)
 	
 	t.tween_property(statue_2, "scale", Vector3(3,3,3), 0.65)
+	
+func get_buff():
+	print("buffed")

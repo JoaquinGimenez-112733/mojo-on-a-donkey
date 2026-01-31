@@ -1,32 +1,68 @@
 [gd_scene format=3 uid="uid://bqkq4o71cbe0h"]
 
-[ext_resource type="Texture2D" uid="uid://0jaydh3qrgo6" path="res://icon.svg" id="1_bchvc"]
 [ext_resource type="Script" uid="uid://d2yxy5gi2pdgq" path="res://Scripts/metronomo.gd" id="1_nj1a6"]
 [ext_resource type="AudioStream" uid="uid://vgokdofu88ox" path="res://Assets/Songs/Rhythmortis.mp3" id="2_53yki"]
+[ext_resource type="Texture2D" uid="uid://bh1vwpxknkl0k" path="res://Assets/Metronomo/Marcador.png" id="3_tbnkc"]
+[ext_resource type="AudioStream" uid="uid://b02smg3me5sly" path="res://Assets/Songs/Fail.wav" id="4_mb2pw"]
+[ext_resource type="Shader" uid="uid://bndp8ymlgrb4l" path="res://Scenes/guitarra.gdshader" id="5_jd0b1"]
+[ext_resource type="AudioStream" uid="uid://dl2lvrp33uahg" path="res://Assets/Songs/Correct.wav" id="5_tbnkc"]
+[ext_resource type="Texture2D" uid="uid://ef3bebpydxk6" path="res://Assets/Metronomo/guitar.png" id="6_b23eu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n682r"]
+shader = ExtResource("5_jd0b1")
+shader_parameter/shock_color = Color(1, 0, 0, 1)
+shader_parameter/amplitude = 30.0
+shader_parameter/frequecy = 20.0
+shader_parameter/flag = false
 
 [node name="Metronomo" type="Control" unique_id=1746553637]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
 script = ExtResource("1_nj1a6")
 
 [node name="Song" type="AudioStreamPlayer2D" parent="." unique_id=804190460]
 stream = ExtResource("2_53yki")
+parameters/looping = true
 
 [node name="Barra" type="ColorRect" parent="." unique_id=373962862]
+visible = false
 layout_mode = 0
-offset_right = 438.0
-offset_bottom = 43.0
+offset_left = -100.0
+offset_top = -113.0
+offset_right = 110.0
+offset_bottom = -66.0
 color = Color(1, 0, 0, 1)
+
+[node name="Fail" type="AudioStreamPlayer2D" parent="." unique_id=654190678]
+stream = ExtResource("4_mb2pw")
+volume_db = 6.0
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="." unique_id=1681749410]
+stream = ExtResource("5_tbnkc")
+volume_db = 4.0
+
+[node name="Guitarra" type="TextureRect" parent="." unique_id=307627489]
+material = SubResource("ShaderMaterial_n682r")
+layout_mode = 0
+offset_left = -122.0
+offset_top = -258.0
+offset_right = 217.0
+offset_bottom = 81.0
+texture = ExtResource("6_b23eu")
+expand_mode = 1
 
 [node name="Marcador" type="TextureRect" parent="." unique_id=1965301155]
 layout_mode = 0
-offset_left = 1.0
-offset_top = -3.0
-offset_right = 49.0
-offset_bottom = 45.0
-texture = ExtResource("1_bchvc")
+offset_left = -121.0
+offset_top = -113.0
+offset_right = -73.0
+offset_bottom = -65.0
+texture = ExtResource("3_tbnkc")
 expand_mode = 1

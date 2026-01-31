@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://tj5ghr64ktcb"]
+
+[ext_resource type="Script" uid="uid://c0643lrrwftq2" path="res://Scenes/mob_spawner.gd" id="1_7s73n"]
+[ext_resource type="PackedScene" uid="uid://bmmjmo4mmr3gq" path="res://Scenes/enemy.tscn" id="1_yq02b"]
+
+[sub_resource type="Curve3D" id="Curve3D_7s73n"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.045986176, 0, 46.447475, 0, 0, 0, 0, 0, 0, 3.1366692, 0, 32.39887, 0, 0, 0, 0, 0, 0, 10.441952, 0, 20.598036, 0, 0, 0, 0, 0, 0, 2.6801982, 0, 4.165903, 0, 0, 0, 0, 0, 0, 3.023315, 0, -3.8975062, 0, 0, 0, 0, 0, 0, 12.408764, 0, -12.275702, 0, 0, 0, 0, 0, 0, 26.738323, 0, -14.242507),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[node name="MobSpawner" type="Path3D" unique_id=573386118]
+curve = SubResource("Curve3D_7s73n")
+script = ExtResource("1_7s73n")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1217280635]
+transform = Transform3D(0.9766421, 0, -0.21486051, 0, 1, 0, 0.21486051, 0, 0.9766421, 0.045986176, 0, 46.447475)
+
+[node name="Enemy" parent="PathFollow3D" unique_id=1086858386 groups=["enemies"] instance=ExtResource("1_yq02b")]
