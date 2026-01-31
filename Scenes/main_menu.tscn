@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cxsfk7jakn6t8"]
+
+[ext_resource type="Script" uid="uid://vuxrdmt8fva3" path="res://main_menu.gd" id="1_28flt"]
+
+[node name="MainMenu" type="Node2D" unique_id=1232978520]
+script = ExtResource("1_28flt")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1508236803]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button_manager" unique_id=938465707]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 153.0
+offset_right = 718.0
+offset_bottom = 240.0
+text = "Iniciar Juego"
+
+[node name="Créditos" type="Button" parent="Button_manager" unique_id=1391936437]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 262.0
+offset_right = 718.0
+offset_bottom = 349.0
+text = "Créditos"
+
+[node name="Salir" type="Button" parent="Button_manager" unique_id=1914426223]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 374.0
+offset_right = 718.0
+offset_bottom = 462.0
+text = "Salir"
+
+[connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_manager/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="Button_manager/Créditos" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Button_manager/Salir" to="." method="_on_play_pressed"]

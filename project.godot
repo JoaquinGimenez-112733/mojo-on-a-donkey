@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="mojo on a donkey"
-run/main_scene="uid://doof64gx555x0"
+run/main_scene="uid://cxsfk7jakn6t8"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://0jaydh3qrgo6"
 
 [global_group]
 
