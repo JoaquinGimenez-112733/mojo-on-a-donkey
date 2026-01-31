@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://co4nuadpmjunh" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dnh7tnkdu4a0o" path="res://Scenes/tower_test.tscn" id="2_8ffim"]
-[ext_resource type="PackedScene" uid="uid://tj5ghr64ktcb" path="res://Scenes/mob_spawner.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://ct3x2ug8sylnj" path="res://Scenes/base.tscn" id="3_xfk5q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -51,6 +51,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1357471, 0)
 [node name="TowerTest" parent="." unique_id=1999773519 instance=ExtResource("2_8ffim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7248793)
 
-[node name="MobSpawner" parent="." unique_id=573386118 instance=ExtResource("3_xfk5q")]
+[node name="Base" parent="." unique_id=2071647317 instance=ExtResource("3_xfk5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7469893, 0, -5.9564857)
+
+[connection signal="healtUpdate" from="Base" to="Player" method="_on_base_healt_update"]
 
 [editable path="TowerTest"]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://djbgfl5vw57y7" path="res://Scripts/hud.gd" id="1_bjfho"]
 [ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="1_e0onf"]
 [ext_resource type="Texture2D" uid="uid://bcyne32revcdu" path="res://Assets/HUD/coin.png" id="2_fccik"]
+[ext_resource type="Texture2D" uid="uid://u65uihpq3xwn" path="res://Assets/HUD/heart.png" id="4_6fbih"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fccik"]
 font = ExtResource("1_e0onf")
@@ -26,6 +27,15 @@ offset_bottom = 66.0
 text = "0"
 label_settings = SubResource("LabelSettings_fccik")
 
+[node name="HealtLabel" type="Label" parent="." unique_id=1402871374]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 80.0
+offset_right = 133.0
+offset_bottom = 138.0
+text = "10"
+label_settings = SubResource("LabelSettings_fccik")
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=143675534]
 layout_mode = 0
 offset_left = 11.0
@@ -33,4 +43,13 @@ offset_top = 11.0
 offset_right = 71.0
 offset_bottom = 67.0
 texture = ExtResource("2_fccik")
+expand_mode = 1
+
+[node name="Heart" type="TextureRect" parent="." unique_id=638115353]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 82.0
+offset_right = 71.0
+offset_bottom = 138.0
+texture = ExtResource("4_6fbih")
 expand_mode = 1

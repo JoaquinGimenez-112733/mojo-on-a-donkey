@@ -78,3 +78,7 @@ func _buff_emitter(flag):
 		for area in buff_area.get_overlapping_areas():
 			if area is TowerArea:
 				area.get_buff()
+
+
+func _on_base_healt_update(h: int) -> void:
+	hud.set_healt_label(h)
