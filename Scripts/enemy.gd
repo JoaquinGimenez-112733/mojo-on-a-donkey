@@ -10,6 +10,8 @@ var has_target: bool = false
 func _ready() -> void:
 	target_pos = Vector3(0, 0, 0)
 	has_target = true
+	velocity = Vector3.ZERO
+	await get_tree().physics_frame
 	
 
 
@@ -22,8 +24,8 @@ func _physics_process(delta: float) -> void:
 		velocity = direction.normalized() * SPEED
 		
 		if nav_agent.is_navigation_finished():
-			has_target = false
 			velocity = Vector3.ZERO
+			queue_free()
 			
 		## ROTACION EN MOVIMIENTO
 		var ROTATION_SPEED = 4
