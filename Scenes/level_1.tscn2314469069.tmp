@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://doof64gx555x0"]
+
+[ext_resource type="PackedScene" uid="uid://co4nuadpmjunh" path="res://Scenes/player.tscn" id="1_vk57k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_xfk5q"]
+sky_material = SubResource("ProceduralSkyMaterial_8ffim")
+
+[sub_resource type="Environment" id="Environment_7p6j4"]
+background_mode = 2
+sky = SubResource("Sky_xfk5q")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_6444e"]
+size = Vector3(20, 0.1, 20)
+
+[node name="Level1" type="Node3D" unique_id=12093280]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1620242018]
+environment = SubResource("Environment_7p6j4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=73923883]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=628085041]
+mesh = SubResource("BoxMesh_6444e")
+
+[node name="Player" parent="MeshInstance3D" unique_id=891889765 instance=ExtResource("1_vk57k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1357471, 0)
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D/Player" unique_id=51291235]
+transform = Transform3D(1, 0, 0, 0, 0.4067366, 0.9135455, 0, -0.9135455, 0.4067366, 0, 20, 0)
