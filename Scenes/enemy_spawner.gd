@@ -4,7 +4,6 @@ extends Node3D
 @export var spawn_interval := 5.0
 @export var enemies_per_wave := 10
 @export var target_position: Vector3
-@export var enemies_reached := 0
 
 @onready var spawn_point: Marker3D = $Marker3D
 @onready var timer: Timer = $Timer

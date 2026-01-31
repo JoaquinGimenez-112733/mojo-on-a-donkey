@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 const SPEED = 20
+@onready var spring_arm_3d: SpringArm3D = $CameraPivot/SpringArm3D
 
 @onready var hud: Control = $HUD
 @onready var interact_area: Area3D = $InteractArea
@@ -14,6 +15,7 @@ var inerciando = false
 var drawn : bool = false
 var coins = 10
 func _ready():
+	spring_arm_3d.collision_mask = 0
 	hud.set_text_label(coins)
 
 func _physics_process(delta: float) -> void:
