@@ -93,7 +93,7 @@ mesh = SubResource("BoxMesh_xfk5q")
 shape = SubResource("ConcavePolygonShape3D_7p6j4")
 
 [node name="Enemy" parent="." unique_id=1086858386 instance=ExtResource("3_xfk5q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 54.009953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2447586, 0, 54.009953)
 SPEED = 2.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemy" unique_id=1206369417]

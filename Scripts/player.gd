@@ -34,10 +34,12 @@ func _process(delta: float) -> void:
 		##velocity.z += clampf(dir.z * delta * SPEED, 0.0, 5000.0)
 		velocity.x = move_toward(velocity.x, target_vel.x, SPEED  * delta)
 		velocity.z = move_toward(velocity.z, target_vel.z, SPEED  * delta)
+	else: velocity = Vector3.ZERO
+	
 	if not is_on_floor():
 		velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta
 	else:
-		velocity.y = 0.0
+		velocity.y = 1
 	move_and_slide()
 	
 func _unhandled_input(event: InputEvent) -> void:
