@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c26a6nynw4qn4"]
+
+[ext_resource type="Script" uid="uid://djbgfl5vw57y7" path="res://Scripts/hud.gd" id="1_bjfho"]
+[ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="1_e0onf"]
+[ext_resource type="Texture2D" uid="uid://bcyne32revcdu" path="res://Assets/HUD/coin.png" id="2_fccik"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fccik"]
+font = ExtResource("1_e0onf")
+font_size = 40
+
+[node name="HUD" type="Control" unique_id=139794672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjfho")
+
+[node name="CoinsLabel" type="Label" parent="." unique_id=1992948184]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 8.0
+offset_right = 134.0
+offset_bottom = 66.0
+text = "0"
+label_settings = SubResource("LabelSettings_fccik")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=143675534]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 71.0
+offset_bottom = 67.0
+texture = ExtResource("2_fccik")
+expand_mode = 1

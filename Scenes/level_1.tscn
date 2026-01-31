@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doof64gx555x0"]
 
 [ext_resource type="PackedScene" uid="uid://co4nuadpmjunh" path="res://Scenes/player.tscn" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://dnh7tnkdu4a0o" path="res://Scenes/tower_test.tscn" id="2_8ffim"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,4 +43,5 @@ shape = SubResource("ConcavePolygonShape3D_vk57k")
 [node name="Player" parent="." unique_id=891889765 instance=ExtResource("1_vk57k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1357471, 0)
 
-[editable path="Player"]
+[node name="TowerTest" parent="." unique_id=1999773519 instance=ExtResource("2_8ffim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7248793)
