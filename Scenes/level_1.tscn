@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://co4nuadpmjunh" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dnh7tnkdu4a0o" path="res://Scenes/tower_test.tscn" id="2_8ffim"]
+[ext_resource type="PackedScene" uid="uid://bcvwi0oi33ufh" path="res://Models/Terreno_para_pintar.glb" id="3_evi0p"]
 [ext_resource type="PackedScene" uid="uid://ct3x2ug8sylnj" path="res://Scenes/base.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://dvqsc3h2efu2b" path="res://Scenes/enemy_spawner.gd" id="5_evi0p"]
 [ext_resource type="PackedScene" uid="uid://bmmjmo4mmr3gq" path="res://Scenes/enemy.tscn" id="6_lsmp6"]
@@ -58,8 +59,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7248793)
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1098241747]
 navigation_mesh = SubResource("NavigationMesh_8ffim")
 
+[node name="Terreno_para_pintar" parent="NavigationRegion3D" unique_id=1083034155 instance=ExtResource("3_evi0p")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+
 [node name="Ground" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=628085041]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_6444e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Ground" unique_id=1203117487]
