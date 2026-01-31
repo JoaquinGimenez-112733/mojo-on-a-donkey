@@ -2,28 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://dg62wu4vm1ejf" path="res://Models/bricks.glb" id="1_1uhhx"]
 [ext_resource type="Script" uid="uid://bvj2lhib226c7" path="res://Scripts/tower_test.gd" id="1_cm30i"]
-[ext_resource type="PackedScene" uid="uid://c5i0gdhhc3wrw" path="res://Models/statue.glb" id="2_cm30i"]
+[ext_resource type="PackedScene" uid="uid://0g3jcaiysdra" path="res://Scenes/totemColision.tscn" id="4_jyr3c"]
 [ext_resource type="Script" uid="uid://cseumuv35bgxs" path="res://Scripts/area_3d.gd" id="4_u4tih"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_u4tih"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_1uhhx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u4tih"]
 
 [node name="TowerTest" type="Node3D" unique_id=1999773519]
 script = ExtResource("1_cm30i")
 
 [node name="bricks2" parent="." unique_id=724236409 instance=ExtResource("1_1uhhx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="statue2" parent="." unique_id=865098288 instance=ExtResource("2_cm30i")]
-transform = Transform3D(2.1213202, 0, 2.1213202, 0, 3, 0, -2.1213202, 0, 2.1213202, -1.6187289, 0, -1.9091377)
-visible = false
-
-[node name="AttackArea" type="Area3D" parent="statue2" unique_id=1826796208]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="statue2/AttackArea" unique_id=1330614165]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
-shape = SubResource("SphereShape3D_u4tih")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1333242291]
 script = ExtResource("4_u4tih")
@@ -33,6 +23,16 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_1uhhx")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1334089660]
+
+[node name="totem" parent="." unique_id=1290063975 instance=ExtResource("4_jyr3c")]
+transform = Transform3D(2.1213202, 0, 2.1213202, 0, 3, 0, -2.1213202, 0, 2.1213202, -1.6187289, 0, -1.9091377)
+visible = false
+
+[node name="AttackArea" type="Area3D" parent="totem" unique_id=1826796208]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="totem/AttackArea" unique_id=1330614165]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_u4tih")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

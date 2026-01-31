@@ -1,8 +1,8 @@
 extends Node3D
-@onready var statue_2: Node3D = $statue2
+@onready var statue_2: Node3D = $totem
 const BULLET = preload("uid://dyof53uxqmruj")
 @onready var marker_3d: Marker3D = $Marker3D
-@onready var area_attack: Area3D = $statue2/AttackArea
+@onready var area_attack: Area3D = $totem/AttackArea
 
 var targets : Array
 

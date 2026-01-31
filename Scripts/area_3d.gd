@@ -1,6 +1,7 @@
 extends Area3D
 class_name TowerArea
-@onready var statue_2: Node3D = $"../statue2"
+@onready var statue_2: Node3D = $"../totem"
+
 
 var is_built = false
 
