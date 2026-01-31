@@ -9,6 +9,7 @@ const SPEED = 20
 
 const METRONOMO = preload("uid://bqkq4o71cbe0h")
 var metronomo_ui : Control = null
+var inerciando = false
 
 var drawn : bool = false
 var coins = 10
@@ -24,6 +25,7 @@ func _process(delta: float) -> void:
 	var target_vel := Vector3.ZERO
 
 	if input_vec != Vector2.ZERO:
+		inerciando = false
 		var dir := Vector3(input_vec.x, 0, input_vec.y).normalized()
 		target_vel = dir * SPEED
 		#var dir := Vector3(input_vec.x, 0, input_vec.y)
@@ -34,7 +36,13 @@ func _process(delta: float) -> void:
 		##velocity.z += clampf(dir.z * delta * SPEED, 0.0, 5000.0)
 		velocity.x = move_toward(velocity.x, target_vel.x, SPEED  * delta)
 		velocity.z = move_toward(velocity.z, target_vel.z, SPEED  * delta)
-	else: velocity = Vector3.ZERO
+	else: 
+		if inerciando == false:
+			inerciando = true
+			var t = get_tree().create_tween()
+			t.set_ease(Tween.EASE_OUT)
+			t.tween_property(self, "velocity", Vector3.ZERO, 0.55 )
+		#velocity = Vector3.ZERO
 	
 	if not is_on_floor():
 		velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta

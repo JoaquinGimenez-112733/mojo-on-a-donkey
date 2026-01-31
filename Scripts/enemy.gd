@@ -4,7 +4,7 @@ class_name Minion
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var target_pos: Vector3
 var has_target: bool = false
-@export var SPEED: float = 2
+@export var SPEED: float = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,5 +35,5 @@ func _physics_process(delta: float) -> void:
 		#rotation.y = move_toward(rotation.y, target_rotation, delta * ROTATION_SPEED)
 		
 	move_and_slide()
-	print(nav_agent.is_navigation_finished())
+	#print(nav_agent.is_navigation_finished())
 		

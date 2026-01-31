@@ -6,9 +6,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1086858386]
+[node name="Enemy" type="CharacterBody3D" unique_id=1086858386 groups=["enemies"]]
 script = ExtResource("1_hghv2")
-SPEED = 20
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1255003794]
 mesh = SubResource("CapsuleMesh_hghv2")

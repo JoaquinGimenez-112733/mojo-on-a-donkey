@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://co4nuadpmjunh" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://dnh7tnkdu4a0o" path="res://Scenes/tower_test.tscn" id="2_8ffim"]
 [ext_resource type="PackedScene" uid="uid://bmmjmo4mmr3gq" path="res://Scenes/enemy.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://ct3x2ug8sylnj" path="res://Scenes/base.tscn" id="4_7p6j4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ffim"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -94,12 +95,15 @@ shape = SubResource("ConcavePolygonShape3D_7p6j4")
 
 [node name="Enemy" parent="." unique_id=1086858386 instance=ExtResource("3_xfk5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2447586, 0, 54.009953)
-SPEED = 2.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Enemy" unique_id=1206369417]
 path_height_offset = 0.25
 simplify_path = true
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="Base" parent="." unique_id=2071647317 instance=ExtResource("4_7p6j4")]
+
+[connection signal="healtUpdate" from="Base" to="Player" method="_on_base_healt_update"]
 
 [editable path="TowerTest"]
