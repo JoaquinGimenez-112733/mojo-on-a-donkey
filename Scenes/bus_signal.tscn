@@ -8,3 +8,6 @@ script = ExtResource("1_dcafg")
 
 [node name="Coin" type="AudioStreamPlayer2D" parent="." unique_id=523127931]
 stream = ExtResource("2_f70bg")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=2074630137]
+autoplay = true

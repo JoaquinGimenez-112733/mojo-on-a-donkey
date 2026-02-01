@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxsfk7jakn6t8"]
 
 [ext_resource type="Script" uid="uid://vuxrdmt8fva3" path="res://main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://0ew2vb00c4d2" path="res://Assets/BG/tiki-masks-colorful-pattern-seamless_153969-7352.png" id="2_1ehe0"]
 [ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="2_48xlc"]
 
 [sub_resource type="Theme" id="Theme_1ehe0"]
@@ -28,6 +29,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=710350143]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1478064641]
+motion_mirroring = Vector2(1280, 1280)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1179318945]
+modulate = Color(1, 1, 1, 0.28235295)
+texture_repeat = 2
+texture = ExtResource("2_1ehe0")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 1280)
+
 [node name="Button_manager" type="Control" parent="." unique_id=1508236803]
 layout_mode = 1
 anchors_preset = 8
@@ -49,9 +63,9 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -142.0
-offset_top = -110.5
+offset_top = -55.0
 offset_right = 152.0
-offset_bottom = -74.80597
+offset_bottom = -19.30597
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_1ehe0")
@@ -73,8 +87,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -90.5
-offset_right = 90.5
+offset_left = -86.0
+offset_top = 39.0
+offset_right = 95.0
+offset_bottom = 76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_48xlc")
@@ -95,10 +111,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -53.5
-offset_top = 77.5
-offset_right = 53.5
-offset_bottom = 114.5
+offset_left = -50.0
+offset_top = 135.0
+offset_right = 57.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ce3w2")
@@ -114,8 +130,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_48xlc")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_n45e2")
 text = "Salir"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=999000547]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 16.0
+offset_right = 1124.0
+offset_bottom = 279.0
+theme_override_colors/default_color = Color(0.43295252, 0.6852396, 0.1728468, 1)
+theme_override_fonts/normal_font = ExtResource("2_48xlc")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[tornado][rainbow]Tiki on a Donkey"
+
 [connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button_manager/Créditos" to="." method="_on_créditos_pressed"]
-[connection signal="pressed" from="Button_manager/Créditos" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
-[connection signal="pressed" from="Button_manager/Salir" to="." method="_on_play_pressed"]

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ct3x2ug8sylnj"]
 
 [ext_resource type="Script" uid="uid://dnfw2mw7ie5qw" path="res://Scripts/base.gd" id="1_1w1q6"]
-[ext_resource type="PackedScene" uid="uid://b28jh02yn8cpn" path="res://Models/banner.glb" id="1_31hd7"]
 [ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="3_6qyon"]
+[ext_resource type="PackedScene" uid="uid://dd421ofvlfswq" path="res://Scenes/choza_chaman.tscn" id="3_jdayy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1w1q6"]
-radius = 0.8
+radius = 1.6870117
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1w1q6"]
 viewport_path = NodePath("Healthbar/SubViewport")
@@ -24,15 +24,15 @@ font_size = 120
 [node name="Base" type="Area3D" unique_id=2071647317]
 script = ExtResource("1_1w1q6")
 
+[node name="choza chaman" parent="." unique_id=2016849010 instance=ExtResource("3_jdayy")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 0.7, 0, -1.509958e-07, 0, -1, 2.33984, 0, 5.2959013)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=342845574]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.011793137, 1.3587165, -0.98745203)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.38178062, 1.3587165, 0.19652176)
 shape = SubResource("CylinderShape3D_1w1q6")
 
-[node name="banner2" parent="." unique_id=1243396277 instance=ExtResource("1_31hd7")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-
 [node name="Healthbar" type="Node3D" parent="." unique_id=475230563]
-transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0, 5, -2)
+transform = Transform3D(1, 0, 0, 0, 1.1924881e-08, 1, 0, -1, 1.1924881e-08, 0.41486955, 9.401627, 5.2141037)
 
 [node name="SubViewport" type="SubViewport" parent="Healthbar" unique_id=930052214]
 disable_3d = true
@@ -40,6 +40,7 @@ transparent_bg = true
 size = Vector2i(128, 32)
 
 [node name="ControlRoot" type="Control" parent="Healthbar/SubViewport" unique_id=672582317]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
