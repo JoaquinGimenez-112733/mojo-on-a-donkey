@@ -25,7 +25,6 @@ const COIN_ADD = preload("uid://iowds4v2r33t")
 @export var head_offset := Vector3(0, 1.8, 0) # si no tenés Marker3D
 
 @onready var cam := get_viewport().get_camera_3d()
-@onready var ui_layer := get_tree().current_scene.get_node("CanvasLayer") as CanvasLayer
 func _ready():
 	BusSignal.notify_coin_update(coins)
 	BusSignal.updateCoins.connect(_add_coins)
@@ -34,7 +33,7 @@ func _ready():
 	animP = chaman.get_node("AnimationPlayer")
 
 func _add_coins():
-	show_coin_popup(1)
+	
 	coins = BusSignal.coins
 	hud.set_text_label(coins)
 func _physics_process(delta: float) -> void:
@@ -109,23 +108,3 @@ func _buff_emitter(flag):
 
 func _on_base_healt_update(h: int) -> void:
 	hud.set_healt_label(h)
-
-func show_coin_popup(amount: int) -> void:
-	if cam == null or ui_layer == null or COIN_ADD == null:
-		return
-
-	# Punto 3D encima de la cabeza
-	var world_pos := global_position + head_offset
-
-	# Proyección a pantalla (Vector2)
-	var screen_pos := cam.unproject_position(world_pos)
-
-	# Instanciar popup (Label)
-	var popup := COIN_ADD.instantiate() as Label
-	ui_layer.add_child(popup)
-
-	# Centrar el label en screen_pos
-	popup.position = screen_pos - popup.size * 0.5
-
-	# Animación
-	(popup as Node).call("play", amount)

@@ -1,5 +1,5 @@
 extends Node3D
-@onready var statue_2: Node3D = $totem
+#@onready var statue_2: Node3D = $totem
 const BULLET = preload("uid://dyof53uxqmruj")
 var RADIAL = preload("uid://yq1epr2xkufo").instantiate()
 var totem_built = false

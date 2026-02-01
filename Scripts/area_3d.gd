@@ -1,7 +1,7 @@
 extends Area3D
 class_name TowerArea
 signal totembuilt
-@onready var statue_2: Node3D = $"../totem"
+#@onready var statue_2: Node3D = $"../totem"
 var RADIAL = preload("uid://yq1epr2xkufo").instantiate()
 @onready var totem_container: Node3D = $"../TotemContainer"
 var TOTEM_COLISION = preload("uid://0g3jcaiysdra").instantiate()
