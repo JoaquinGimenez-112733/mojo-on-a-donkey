@@ -19,21 +19,41 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
 
-[node name="MainMenu" type="Node2D" unique_id=1232978520]
+[node name="MainMenu" type="Control" unique_id=1184266708]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_28flt")
 
 [node name="Button_manager" type="Control" parent="." unique_id=1508236803]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Play" type="Button" parent="Button_manager" unique_id=938465707]
-layout_mode = 0
-offset_left = 447.0
-offset_top = 153.0
-offset_right = 723.0
-offset_bottom = 244.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -110.5
+offset_right = 152.0
+offset_bottom = -74.80597
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_1ehe0")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)
@@ -48,11 +68,15 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
 text = "Iniciar Juego"
 
 [node name="Créditos" type="Button" parent="Button_manager" unique_id=1391936437]
-layout_mode = 0
-offset_left = 447.0
-offset_top = 262.0
-offset_right = 723.0
-offset_bottom = 349.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.5
+offset_right = 90.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_48xlc")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)
@@ -66,11 +90,17 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ce3w2")
 text = "Créditos"
 
 [node name="Salir" type="Button" parent="Button_manager" unique_id=1914426223]
-layout_mode = 0
-offset_left = 447.0
-offset_top = 374.0
-offset_right = 723.0
-offset_bottom = 462.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = 77.5
+offset_right = 53.5
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_ce3w2")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 class_name Player
-const SPEED = 20
+const SPEED = 10
 @export var turn_speed := 2.0
 @onready var spring_arm_3d: SpringArm3D = $CameraPivot/SpringArm3D
 const RADIAL = preload("uid://yq1epr2xkufo")

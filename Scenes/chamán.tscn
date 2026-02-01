@@ -4,7 +4,7 @@
 
 [node name="Chamán" unique_id=1729794515 instance=ExtResource("1_hd3f1")]
 
-[node name="Skeleton3D" parent="Armature _Char" parent_id_path=PackedInt32Array(1059081957) index="0" unique_id=1492193944]
+[node name="Skeleton3D" parent="Armature _Char" parent_id_path=PackedInt32Array(2094571996) index="0" unique_id=1854765199]
 bones/0/position = Vector3(1.3524644e-13, -0.1044465, 1.5933207)
 bones/0/rotation = Quaternion(0.014270751, 8.343799e-07, 1.1908441e-08, 0.9998982)
 bones/3/rotation = Quaternion(-0.64622927, -1.7727119e-14, -1.5407308e-07, 0.76314336)
@@ -70,8 +70,8 @@ bones/90/rotation = Quaternion(-0.15219016, 0.7928821, 0.5208336, 0.27732396)
 bones/91/rotation = Quaternion(-0.30264112, 0.93115395, -0.1813337, -0.09208055)
 bones/92/rotation = Quaternion(0.015113904, -5.6299976e-10, -1.20245955e-08, 0.9998858)
 
-[node name="Mask_C" parent="Armature _Char/Skeleton3D" index="0" unique_id=28212659]
+[node name="Mask_C" parent="Armature _Char/Skeleton3D" index="0" unique_id=1633625246]
 transform = Transform3D(0.9997667, 0.021232275, -0.0039615133, 0.005495767, -0.07269664, 0.99733883, 0.020887788, -0.9971278, -0.07279633, 0.013914401, 1.7576549, -1.7889458)
 
-[node name="Arm_C_R_001" parent="Armature _Char/Skeleton3D" index="1" unique_id=425554023]
+[node name="Arm_C_R_001" parent="Armature _Char/Skeleton3D" index="1" unique_id=407133132]
 transform = Transform3D(0.088938944, -0.97646457, 0.19648679, -0.01002481, 0.19638093, 0.9804762, -0.99598646, -0.08917233, 0.0076770606, -1.0190243, 0.6566136, -1.4207933)

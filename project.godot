@@ -19,6 +19,12 @@ config/icon="uid://0jaydh3qrgo6"
 
 BusSignal="*uid://b0t67b0njs3k6"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 enemies=""

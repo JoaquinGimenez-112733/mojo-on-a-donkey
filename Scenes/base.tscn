@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="3_6qyon"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1w1q6"]
+radius = 0.8
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1w1q6"]
 viewport_path = NodePath("Healthbar/SubViewport")
@@ -24,7 +25,7 @@ font_size = 120
 script = ExtResource("1_1w1q6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=342845574]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.011793137, 1.3587165, 0.108246565)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.011793137, 1.3587165, -0.98745203)
 shape = SubResource("CylinderShape3D_1w1q6")
 
 [node name="banner2" parent="." unique_id=1243396277 instance=ExtResource("1_31hd7")]
