@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 						current_totem = t
 			else:
 				current_totem.look_at(curr.global_position)
+				#await get_tree().create_timer(0.3).timeout
 				
 			#$TotemContainer.look_at(curr.global_position)
 			if can_shoot:			

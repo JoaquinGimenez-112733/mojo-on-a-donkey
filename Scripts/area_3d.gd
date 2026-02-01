@@ -6,6 +6,11 @@ var RADIAL = preload("uid://yq1epr2xkufo").instantiate()
 @onready var totem_container: Node3D = $"../TotemContainer"
 var TOTEM_COLISION = preload("uid://0g3jcaiysdra").instantiate()
 var TOTEM_COLISION_2 = preload("uid://deomjs4an2wqv").instantiate()
+var TOTEM_1_FINAL = preload("uid://ckbg5w40jvfb2").instantiate()
+var TOTEM_2_FINAL = preload("uid://f7vgc23ljm7s").instantiate()
+var TOTEM_3_FINAL = preload("uid://tdgyvwxc3wya").instantiate()
+
+
 var current_totem : Node3D = null
 
 var is_built = false
@@ -13,13 +18,13 @@ var is_built = false
 func build_tower(idx : int):
 	if is_built == false:
 		if idx == 0:
-			totem_container.add_child(TOTEM_COLISION)
+			totem_container.add_child(TOTEM_1_FINAL)
 			pass
 		elif idx == 1:
-			totem_container.add_child(TOTEM_COLISION_2)
+			totem_container.add_child(TOTEM_2_FINAL)
 			pass
 		elif idx == 2:
-			pass
+			totem_container.add_child(TOTEM_3_FINAL)
 		play_build_effect()
 		#statue_2.visible = true
 		is_built = true
