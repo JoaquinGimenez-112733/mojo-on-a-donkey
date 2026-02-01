@@ -18,6 +18,7 @@ config/icon="uid://0jaydh3qrgo6"
 [autoload]
 
 BusSignal="*uid://b0t67b0njs3k6"
+MusicManager="*uid://dreaeq3i4cwcu"
 
 [display]
 
