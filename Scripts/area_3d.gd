@@ -28,6 +28,7 @@ func build_tower(idx : int):
 		play_build_effect()
 		#statue_2.visible = true
 		is_built = true
+		remove_child(RADIAL)
 		
 		totembuilt.emit()
 		if BusSignal.coins >= 3:
@@ -46,14 +47,14 @@ func play_build_effect():
 	t.set_trans(Tween.TRANS_BOUNCE)
 	t.tween_property($"../TotemContainer/structure2", "scale", Vector3(0,0,0), 0.65)
 	$"campfire-pit2".get_node("Fire").visible = true
-	t.tween_property(current_totem, "scale", Vector3(0.9,0.9,0.9), 0.65)
+	t.tween_property(current_totem, "scale", Vector3(0.6,0.6,0.6), 0.65)
 	
 func get_buff():
 	print("buffed")
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Player and is_built == false:
 		add_child(RADIAL)
 		if is_instance_valid(RADIAL):
 			RADIAL.slice_pressed.connect(_slice_pressed)
