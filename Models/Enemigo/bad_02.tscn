@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ckynfi402yokw"]
+
+[ext_resource type="PackedScene" uid="uid://uyjan5h8mpvs" path="res://Models/Enemigo/Bad02.glb" id="1_jkqkf"]
+
+[node name="Bad02" unique_id=327733079 instance=ExtResource("1_jkqkf")]

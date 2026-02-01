@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ca6mv582j3hgh"]
+
+[ext_resource type="Script" uid="uid://dxr3mgdlwhxbg" path="res://Scripts/enemy.gd" id="1_cxrxb"]
+[ext_resource type="PackedScene" uid="uid://ckynfi402yokw" path="res://Models/Enemigo/bad_02.tscn" id="2_cxrxb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]
+radius = 0.5136719
+
+[node name="Enemy" type="CharacterBody3D" unique_id=1086858386 groups=["enemies"]]
+script = ExtResource("1_cxrxb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2006664619]
+transform = Transform3D(0.99985194, -0.017208098, 0, 0.017208098, 0.99985194, 0, 0, 0, 1, 0, 1.0537379, 0)
+shape = SubResource("CapsuleShape3D_1f0kj")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1241366952]
+target_desired_distance = 2.0
+path_height_offset = 0.25
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+debug_path_custom_point_size = 8.0
+
+[node name="Bad03" parent="." unique_id=327733079 instance=ExtResource("2_cxrxb")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
