@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 const SPEED = 20
+@export var turn_speed := 2.0
 @onready var spring_arm_3d: SpringArm3D = $CameraPivot/SpringArm3D
 const RADIAL = preload("uid://yq1epr2xkufo")
 var menu := preload("uid://yq1epr2xkufo").instantiate()
@@ -8,6 +9,10 @@ var menu := preload("uid://yq1epr2xkufo").instantiate()
 @onready var interact_area: Area3D = $InteractArea
 @onready var ring: MeshInstance3D = $Ring
 @onready var buff_area: Area3D = $BuffArea
+@onready var chaman: Node3D = $Chamán
+var animP : AnimationPlayer
+#var animP = chaman.get_node("AnimationPlayer")
+#@onready var anim_player: AnimationPlayer = chaman.find_child("", "AnimationPlayer", true, false)
 var t : Tween
 
 const METRONOMO = preload("uid://bqkq4o71cbe0h")
@@ -19,6 +24,7 @@ var coins = 10
 func _ready():
 	spring_arm_3d.collision_mask = 0
 	hud.set_text_label(coins)
+	animP = chaman.get_node("AnimationPlayer")
 
 func _physics_process(delta: float) -> void:
 	pass
@@ -29,9 +35,12 @@ func _process(delta: float) -> void:
 	var target_vel := Vector3.ZERO
 
 	if input_vec != Vector2.ZERO:
+		animP.play("Caminata_Burro")
 		t.kill()
 		inerciando = false
 		var dir := Vector3(input_vec.x, 0, input_vec.y).normalized()
+		var target_yaw := atan2(dir.x, dir.z)  # si tu modelo mira +Z
+		chaman.rotation.y = lerp_angle(chaman.rotation.y, target_yaw, turn_speed * delta)
 		target_vel = dir * SPEED
 		velocity.x = move_toward(velocity.x, target_vel.x, SPEED  * delta)
 		velocity.z = move_toward(velocity.z, target_vel.z, SPEED  * delta)
@@ -73,8 +82,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			if area_overlapped is TowerArea:
 				if area_overlapped.is_built == false:
 					if coins >= 3:
-						pass
-						#coins = clamp(coins - 3, 0, 999)
+						pass						#coins = clamp(coins - 3, 0, 999)
 						#area_overlapped.build_tower()
 						#hud.set_text_label(coins)
 
