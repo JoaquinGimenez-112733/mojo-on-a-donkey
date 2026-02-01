@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dvqsc3h2efu2b" path="res://Scenes/enemy_spawner.gd" id="2_25yk5"]
 [ext_resource type="PackedScene" uid="uid://bmmjmo4mmr3gq" path="res://Scenes/enemy.tscn" id="3_o1sbm"]
 [ext_resource type="PackedScene" uid="uid://ct3x2ug8sylnj" path="res://Scenes/base.tscn" id="4_3ybsi"]
+[ext_resource type="PackedScene" uid="uid://c1f0om263quvm" path="res://Models/Palmeira.glb" id="5_25yk5"]
+[ext_resource type="ArrayMesh" uid="uid://ca3c4gxqxs8gj" path="res://Models/mesh_palmera.tres" id="6_o1sbm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8ffim"]
 vertices = PackedVector3Array(12.6814575, 0.48293304, 14.6814575, 12.4314575, 0.48293304, 16.181458, 32.431458, 0.48293304, 23.431458, 11.6814575, 0.48293304, 14.1814575, 55.931458, 0.48293304, 0.18145752, 55.931458, 0.48293304, -0.31854248, -22.818542, 0.48293304, -33.068542, -7.8185425, 0.48293304, 10.6814575, 0.18145752, 0.48293304, -56.068542, -6.8185425, 0.48293304, 22.431458, -6.0685425, 0.48293304, 22.431458, -5.8185425, 0.48293304, 13.4314575, -8.3185425, 0.48293304, 12.6814575, -21.568542, 0.48293304, 34.681458, -20.568542, 0.48293304, 34.431458, -8.3185425, 0.48293304, 10.9314575, -56.068542, 0.48293304, 0.18145752, -9.3185425, 0.48293304, 27.931458, -6.3185425, 0.48293304, 34.931458, -5.0685425, 0.48293304, 35.431458, -5.0685425, 0.48293304, 24.431458, -5.0685425, 0.48293304, 23.181458, 10.9314575, 0.48293304, 16.681458, 12.1814575, 0.48293304, 16.681458, 8.6814575, 0.48293304, 47.431458, -7.8185425, 8.732933, 25.431458, -7.0685425, 8.732933, 24.681458, -7.5685425, 8.732933, 24.431458, -8.3185425, 8.732933, 25.181458, -9.3185425, 8.732933, 26.681458, -8.8185425, 8.732933, 26.181458, -9.3185425, 8.732933, 25.931458, -9.8185425, 8.732933, 26.431458, -11.0685425, 8.732933, 28.181458, -10.3185425, 8.732933, 27.431458, -10.8185425, 8.732933, 27.181458, -11.5685425, 8.732933, 27.931458, -7.5685425, 0.48293304, 35.931458, -7.5685425, 0.48293304, 36.681458, -19.568542, 0.48293304, 36.431458, -16.318542, 0.48293304, 39.681458, -6.5685425, 0.48293304, 37.681458, -12.5685425, 8.732933, 29.431458, -12.0685425, 8.732933, 28.931458, -12.5685425, 8.732933, 28.681458, -13.0685425, 8.732933, 29.181458, -14.0685425, 8.732933, 30.681458, -13.5685425, 8.732933, 30.181458, -14.0685425, 8.732933, 29.931458, -14.5685425, 8.732933, 30.431458, -15.8185425, 8.732933, 32.181458, -15.0685425, 8.732933, 31.431458, -15.5685425, 8.732933, 31.181458, -16.318542, 8.732933, 31.931458, -17.318542, 8.732933, 33.431458, -16.818542, 8.732933, 32.931458, -17.318542, 8.732933, 32.681458, -17.818542, 8.732933, 33.181458, -19.068542, 8.732933, 34.931458, -18.318542, 8.732933, 34.181458, -18.818542, 8.732933, 33.931458, -19.568542, 8.732933, 34.681458, -20.568542, 8.732933, 36.181458, -20.068542, 8.732933, 35.681458, -20.568542, 8.732933, 35.431458, -21.068542, 8.732933, 35.931458, -6.5685425, 0.48293304, 49.431458, -2.0685425, 0.48293304, 41.431458, -0.31854248, 0.48293304, 55.931458, 0.18145752, 0.48293304, 55.931458, 6.9314575, 0.48293304, 49.181458)
@@ -20,11 +22,9 @@ size = Vector3(80, 0.1, 80)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8ffim"]
 data = PackedVector3Array(-40, 0.049999997, 40, 40, 0.049999997, 40, -40, -0.049999997, 40, 40, 0.049999997, 40, 40, -0.049999997, 40, -40, -0.049999997, 40, 40, 0.049999997, -40, -40, 0.049999997, -40, 40, -0.049999997, -40, -40, 0.049999997, -40, -40, -0.049999997, -40, 40, -0.049999997, -40, 40, 0.049999997, 40, 40, 0.049999997, -40, 40, -0.049999997, 40, 40, 0.049999997, -40, 40, -0.049999997, -40, 40, -0.049999997, 40, -40, 0.049999997, -40, -40, 0.049999997, 40, -40, -0.049999997, -40, -40, 0.049999997, 40, -40, -0.049999997, 40, -40, -0.049999997, -40, 40, 0.049999997, 40, -40, 0.049999997, 40, 40, 0.049999997, -40, -40, 0.049999997, 40, -40, 0.049999997, -40, 40, 0.049999997, -40, -40, -0.049999997, 40, 40, -0.049999997, 40, -40, -0.049999997, -40, 40, -0.049999997, 40, 40, -0.049999997, -40, -40, -0.049999997, -40)
 
-[sub_resource type="BoxMesh" id="BoxMesh_xfk5q"]
-size = Vector3(20, 10, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7p6j4"]
-data = PackedVector3Array(-10, 5, 0.5, 10, 5, 0.5, -10, -5, 0.5, 10, 5, 0.5, 10, -5, 0.5, -10, -5, 0.5, 10, 5, -0.5, -10, 5, -0.5, 10, -5, -0.5, -10, 5, -0.5, -10, -5, -0.5, 10, -5, -0.5, 10, 5, 0.5, 10, 5, -0.5, 10, -5, 0.5, 10, 5, -0.5, 10, -5, -0.5, 10, -5, 0.5, -10, 5, -0.5, -10, 5, 0.5, -10, -5, -0.5, -10, 5, 0.5, -10, -5, 0.5, -10, -5, -0.5, 10, 5, 0.5, -10, 5, 0.5, 10, 5, -0.5, -10, 5, 0.5, -10, 5, -0.5, 10, 5, -0.5, -10, -5, 0.5, 10, -5, 0.5, -10, -5, -0.5, 10, -5, 0.5, 10, -5, -0.5, -10, -5, -0.5)
+[sub_resource type="MultiMesh" id="MultiMesh_o1sbm"]
+transform_format = 1
+mesh = ExtResource("6_o1sbm")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" unique_id=501969388]
 navigation_mesh = SubResource("NavigationMesh_8ffim")
@@ -42,35 +42,8 @@ mesh = SubResource("BoxMesh_6444e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1039007988]
 shape = SubResource("ConcavePolygonShape3D_8ffim")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=954518292]
-transform = Transform3D(0.7587031, 0, -0.65143657, 0, 1, 0, 0.65143657, 0, 0.7587031, 1.0588136, 3.232933, 42.505856)
-mesh = SubResource("BoxMesh_xfk5q")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=290988149]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=730586260]
-shape = SubResource("ConcavePolygonShape3D_7p6j4")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2121079154]
-transform = Transform3D(-0.7642014, 0, -0.6449776, 0, 1, 0, 0.6449776, 0, -0.7642014, -13.613636, 3.232935, 29.931637)
-mesh = SubResource("BoxMesh_xfk5q")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=911231461]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1369567469]
-shape = SubResource("ConcavePolygonShape3D_7p6j4")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1972347046]
-transform = Transform3D(-0.98148704, 0, 0.1915285, 0, 1, 0, -0.1915285, 0, -0.98148704, 2.0971313, 3.232935, 13.621151)
-mesh = SubResource("BoxMesh_xfk5q")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1542964768]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1204944357]
-shape = SubResource("ConcavePolygonShape3D_7p6j4")
-
 [node name="EnemySpawner" type="Node3D" parent="." unique_id=1918069502]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6338482, 53.989014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25759888, 1.6338482, 52.701027)
 script = ExtResource("2_25yk5")
 enemy_scene = ExtResource("3_o1sbm")
 
@@ -78,6 +51,39 @@ enemy_scene = ExtResource("3_o1sbm")
 
 [node name="Timer" type="Timer" parent="EnemySpawner" unique_id=161709236]
 
+[node name="EnemySpawner4" type="Node3D" parent="." unique_id=662348156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.168854, 1.6338477, 0.24473715)
+script = ExtResource("2_25yk5")
+enemy_scene = ExtResource("3_o1sbm")
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner4" unique_id=1108001883]
+
+[node name="Timer" type="Timer" parent="EnemySpawner4" unique_id=1681133518]
+
+[node name="EnemySpawner3" type="Node3D" parent="." unique_id=1628308761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0645771, 1.6338482, -52.243767)
+script = ExtResource("2_25yk5")
+enemy_scene = ExtResource("3_o1sbm")
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner3" unique_id=2016567651]
+
+[node name="Timer" type="Timer" parent="EnemySpawner3" unique_id=476725422]
+
+[node name="EnemySpawner2" type="Node3D" parent="." unique_id=2020881680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.80664, 1.6338482, -0.47169542)
+script = ExtResource("2_25yk5")
+enemy_scene = ExtResource("3_o1sbm")
+
+[node name="Marker3D" type="Marker3D" parent="EnemySpawner2" unique_id=1480180817]
+
+[node name="Timer" type="Timer" parent="EnemySpawner2" unique_id=308472489]
+
 [node name="Base" parent="." unique_id=2071647317 instance=ExtResource("4_3ybsi")]
+
+[node name="Palmeira2" parent="." unique_id=982733678 instance=ExtResource("5_25yk5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8021355, 4.7683716e-07, 44.893486)
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1319526613]
+multimesh = SubResource("MultiMesh_o1sbm")
 
 [connection signal="dead" from="Base" to="EnemySpawner" method="_on_base_dead"]

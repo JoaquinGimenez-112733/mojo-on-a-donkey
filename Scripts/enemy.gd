@@ -6,7 +6,7 @@ var target_pos: Vector3
 var has_target: bool = false
 var healt : float = 20
 
-@export var SPEED: float = 5
+@export var SPEED: float = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 		velocity = direction.normalized() * SPEED
 		
 		if nav_agent.is_navigation_finished():
+			
 			velocity = Vector3.ZERO
 			#queue_free()
 			

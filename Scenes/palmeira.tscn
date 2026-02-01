@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cgw33xmipnopd"]
+
+[ext_resource type="PackedScene" uid="uid://c1f0om263quvm" path="res://Models/Palmeira.glb" id="1_l3brm"]
+[ext_resource type="ArrayMesh" uid="uid://ca3c4gxqxs8gj" path="res://Models/mesh_palmera.tres" id="2_yy5k4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l3brm"]
+height = 7.0
+radius = 4.0
+
+[node name="Palmeira2" unique_id=982733678 instance=ExtResource("1_l3brm")]
+
+[node name="Palmeira" parent="." index="0" unique_id=2112012394]
+mesh = ExtResource("2_yy5k4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Palmeira" index="0" unique_id=1188929625]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Palmeira/StaticBody3D" index="0" unique_id=1360606942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CylinderShape3D_l3brm")

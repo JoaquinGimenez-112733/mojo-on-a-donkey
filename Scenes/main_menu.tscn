@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://cxsfk7jakn6t8"]
 
 [ext_resource type="Script" uid="uid://vuxrdmt8fva3" path="res://main_menu.gd" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://u7tl34lb3t1e" path="res://Fonts/Tiki Tropic.ttf" id="2_48xlc"]
+
+[sub_resource type="Theme" id="Theme_1ehe0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[sub_resource type="Theme" id="Theme_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
+
+[sub_resource type="Theme" id="Theme_ce3w2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
 
 [node name="MainMenu" type="Node2D" unique_id=1232978520]
 script = ExtResource("1_28flt")
@@ -15,24 +32,56 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 447.0
 offset_top = 153.0
-offset_right = 718.0
-offset_bottom = 240.0
+offset_right = 723.0
+offset_bottom = 244.0
+theme = SubResource("Theme_1ehe0")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.72156864, 0.68235296, 0.41568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_48xlc")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
 text = "Iniciar Juego"
 
 [node name="Créditos" type="Button" parent="Button_manager" unique_id=1391936437]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 262.0
-offset_right = 718.0
+offset_right = 723.0
 offset_bottom = 349.0
+theme = SubResource("Theme_48xlc")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.72156864, 0.68235296, 0.41568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_48xlc")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ce3w2")
 text = "Créditos"
 
 [node name="Salir" type="Button" parent="Button_manager" unique_id=1914426223]
 layout_mode = 0
 offset_left = 447.0
 offset_top = 374.0
-offset_right = 718.0
+offset_right = 723.0
 offset_bottom = 462.0
+theme = SubResource("Theme_ce3w2")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.78431374, 0.67058825, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.72156864, 0.68235296, 0.41568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_48xlc")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n45e2")
 text = "Salir"
 
 [connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]

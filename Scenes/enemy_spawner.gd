@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var enemy_scene: PackedScene
-@export var spawn_interval := 5.0
+@export var spawn_interval := randi_range(2, 5)
 @export var enemies_per_wave := 10
 @export var target_position: Vector3
 
