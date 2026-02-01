@@ -26,10 +26,10 @@ func _ready():
 	hud.set_text_label(coins)
 	animP = chaman.get_node("AnimationPlayer")
 
-func _physics_process(delta: float) -> void:
-	pass
+#func _physics_process(delta: float) -> void:
+	#pass
 			
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 
 	var input_vec := Input.get_vector("LEFT","RIGHT", "UP", "DOWN")
 	var target_vel := Vector3.ZERO

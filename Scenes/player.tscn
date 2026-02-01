@@ -5,11 +5,6 @@
 [ext_resource type="Shader" uid="uid://5nnoqbtdvjjd" path="res://Scenes/ring.gdshader" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://cpxxdsoggient" path="res://Scenes/chamán.tscn" id="4_vgqql"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cvnsp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0iea"]
-albedo_color = Color(1, 0, 1, 1)
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvnsp"]
@@ -36,12 +31,8 @@ script = ExtResource("1_v0iea")
 
 [node name="Chamán" parent="." unique_id=1729794515 instance=ExtResource("4_vgqql")]
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1031494641]
-visible = false
-mesh = SubResource("CapsuleMesh_cvnsp")
-material = SubResource("StandardMaterial3D_v0iea")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1964397404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.005754, 0)
 shape = SubResource("CapsuleShape3D_v0iea")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1002871053]
@@ -49,8 +40,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37864757, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=713816547]
 transform = Transform3D(1, 0, 0, 0, 0.4067366, 0.9135455, 0, -0.9135455, 0.4067366, 0, 0, 0)
+collision_mask = 16
 spring_length = 16.0
-margin = 0.0
+margin = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1886589176]
 

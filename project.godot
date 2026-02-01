@@ -58,8 +58,14 @@ DRAW_INSTRUMENT={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Jugador"
+3d_physics/layer_5="Camara"
+
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
 
 [rendering]
