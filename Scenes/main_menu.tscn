@@ -138,9 +138,9 @@ offset_right = 1124.0
 offset_bottom = 279.0
 theme_override_colors/default_color = Color(0.43295252, 0.6852396, 0.1728468, 1)
 theme_override_fonts/normal_font = ExtResource("2_48xlc")
-theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/normal_font_size = 140
 bbcode_enabled = true
-text = "[tornado][rainbow]Tiki on a Donkey"
+text = "[tornado][rainbow]Tiki  on  a  Donkey"
 
 [connection signal="pressed" from="Button_manager/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button_manager/Créditos" to="." method="_on_créditos_pressed"]

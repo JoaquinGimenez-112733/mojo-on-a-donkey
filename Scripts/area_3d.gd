@@ -23,6 +23,7 @@ func build_tower(idx : int):
 		play_build_effect()
 		#statue_2.visible = true
 		is_built = true
+		remove_child(RADIAL)
 		
 		totembuilt.emit()
 		if BusSignal.coins >= 3:
@@ -48,7 +49,7 @@ func get_buff():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Player and is_built == false:
 		add_child(RADIAL)
 		if is_instance_valid(RADIAL):
 			RADIAL.slice_pressed.connect(_slice_pressed)

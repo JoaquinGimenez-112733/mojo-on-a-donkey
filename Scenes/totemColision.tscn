@@ -7,7 +7,7 @@ data = PackedVector3Array(-0.0039999997, 0.5128, 0.273, -0.0602, 0.51449996, 0.2
 
 [node name="totem" unique_id=1290063975 groups=["totem"] instance=ExtResource("1_3nxwr")]
 
-[node name="Cara totem 1" parent="." index="0" unique_id=1755270366]
+[node name="Cara totem 1" parent="." index="0" unique_id=924437142]
 transform = Transform3D(-0.446, 3.899056e-08, 9.553427e-16, 0, -1.949528e-08, 0.25, 3.899056e-08, 0.446, 1.0927847e-08, 0, 1.2, -1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cara totem 1" index="0" unique_id=1589855651]
