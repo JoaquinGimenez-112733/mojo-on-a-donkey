@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bkmlwmyficqy3"]
+
+[ext_resource type="PackedScene" uid="uid://bf3g8ogrwacmk" path="res://Models/Piedras_grupo.glb" id="1_0i2k0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ujqqq"]
+
+[node name="Piedras_grupo" unique_id=467987392 instance=ExtResource("1_0i2k0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=276384895]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1146804689]
+transform = Transform3D(4.53, 0, 0, 0, 4.53, 0, 0, 0, 4.53, -0.862381, 4.2694855, 0.6036644)
+shape = SubResource("CylinderShape3D_ujqqq")
