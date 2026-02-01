@@ -25,7 +25,8 @@ func build_tower(idx : int):
 		is_built = true
 		
 		totembuilt.emit()
-		
+		if BusSignal.coins >= 3:
+			BusSignal.notify_coin_update(-3)
 func play_build_effect():
 	for i in totem_container.get_children():
 		if i.is_in_group("totem"):
@@ -38,8 +39,9 @@ func play_build_effect():
 	var t = get_tree().create_tween()
 	t.set_ease(Tween.EASE_OUT)
 	t.set_trans(Tween.TRANS_BOUNCE)
-	
-	t.tween_property(current_totem, "scale", Vector3(1,1,1), 0.65)
+	t.tween_property($"../TotemContainer/structure2", "scale", Vector3(0,0,0), 0.65)
+	$"campfire-pit2".get_node("Fire").visible = true
+	t.tween_property(current_totem, "scale", Vector3(0.9,0.9,0.9), 0.65)
 	
 func get_buff():
 	print("buffed")
@@ -58,4 +60,7 @@ func _on_body_exited(body: Node3D) -> void:
 		remove_child(RADIAL)
 	
 func _slice_pressed(idx : int):
-	build_tower(idx)
+	if BusSignal.coins >= 3 and is_built == false:
+		build_tower(idx)
+	else:
+		$"../FailSound".play()

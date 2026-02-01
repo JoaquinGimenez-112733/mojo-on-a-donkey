@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dg62wu4vm1ejf" path="res://Models/bricks.glb" id="1_1uhhx"]
 [ext_resource type="Script" uid="uid://bvj2lhib226c7" path="res://Scripts/tower_test.gd" id="1_cm30i"]
+[ext_resource type="PackedScene" uid="uid://b2xp20laylmhs" path="res://Models/structure.glb" id="2_jyr3c"]
 [ext_resource type="Script" uid="uid://cseumuv35bgxs" path="res://Scripts/area_3d.gd" id="4_u4tih"]
+[ext_resource type="PackedScene" uid="uid://cvsby3w0m0er" path="res://Scenes/Campire.tscn" id="5_jyr3c"]
+[ext_resource type="AudioStream" uid="uid://b02smg3me5sly" path="res://Assets/Songs/Fail.wav" id="6_i51e8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u4tih"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1uhhx"]
+radius = 1.0
 
 [node name="TowerTest" type="Node3D" unique_id=1999773519]
 script = ExtResource("1_cm30i")
@@ -25,19 +29,30 @@ debug_color = Color(0.9933798, 0, 0.2452353, 0.41960785)
 [node name="Aim" type="Marker3D" parent="TotemContainer" unique_id=1334089660]
 transform = Transform3D(0.23570228, 0, -0.23570228, 0, 0.33333334, 0, 0.23570228, 0, 0.23570228, -0.068450004, 0, 0.83152616)
 
+[node name="structure2" parent="TotemContainer" unique_id=412430906 instance=ExtResource("2_jyr3c")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.06369808, 0, -0.8629898)
+
 [node name="bricks2" parent="." unique_id=724236409 instance=ExtResource("1_1uhhx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1333242291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3557863, 0, 1.34835)
 script = ExtResource("4_u4tih")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1299586784]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_1uhhx")
 
+[node name="campfire-pit2" parent="Area3D" unique_id=1896994857 instance=ExtResource("5_jyr3c")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
 [node name="BulletContainer" type="Node" parent="." unique_id=1624852594]
 
 [node name="ShootingCD" type="Timer" parent="." unique_id=1923792276]
+
+[node name="FailSound" type="AudioStreamPlayer2D" parent="." unique_id=1484125648]
+stream = ExtResource("6_i51e8")
 
 [connection signal="body_entered" from="TotemContainer/AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="TotemContainer/AttackArea" to="." method="_on_attack_area_body_exited"]

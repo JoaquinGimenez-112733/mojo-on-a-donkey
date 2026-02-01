@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b0t67b0njs3k6"]
+
+[ext_resource type="Script" uid="uid://cps1q2mqdxja6" path="res://bus_signal.gd" id="1_dcafg"]
+[ext_resource type="AudioStream" uid="uid://bg5ri24un4rl3" path="res://Assets/Songs/coin.wav" id="2_f70bg"]
+
+[node name="BusSignal" type="Node" unique_id=1642457880]
+script = ExtResource("1_dcafg")
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="." unique_id=523127931]
+stream = ExtResource("2_f70bg")

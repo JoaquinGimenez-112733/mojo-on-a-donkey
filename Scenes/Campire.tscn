@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cvsby3w0m0er"]
+
+[ext_resource type="PackedScene" uid="uid://boycxawljwwtr" path="res://Models/campfire-pit.glb" id="1_nd6e7"]
+[ext_resource type="Shader" uid="uid://ceeow8aln2264" path="res://fogatita.gdshader" id="2_d7ugb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlr25"]
+render_priority = 0
+shader = ExtResource("2_d7ugb")
+shader_parameter/flamecolor = Vector3(0.7, 1, 0.9)
+shader_parameter/top_radius = 0.1190000056525
+shader_parameter/bottom_radius = 0.0
+shader_parameter/center_radius = 0.0790000037525
+shader_parameter/center_position = 0.0470000022325
+shader_parameter/cylinder_height = 1.1590000550525
+shader_parameter/bottom_curve = 0.4
+shader_parameter/_vibrate_amplitude = 0.015
+shader_parameter/_vibrate_frequency = 200.0
+shader_parameter/_speed = 2.0
+shader_parameter/_scale = 2.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1qnhs"]
+material = SubResource("ShaderMaterial_qlr25")
+top_radius = 0.0
+bottom_radius = 0.1
+height = 0.5
+
+[node name="campfire-pit2" unique_id=1896994857 instance=ExtResource("1_nd6e7")]
+
+[node name="Fire" type="MeshInstance3D" parent="." index="1" unique_id=2118846637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3689266, 0)
+visible = false
+mesh = SubResource("CylinderMesh_1qnhs")

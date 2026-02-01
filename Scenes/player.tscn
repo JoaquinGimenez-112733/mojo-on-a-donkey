@@ -64,5 +64,7 @@ mesh = SubResource("PlaneMesh_cvnsp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BuffArea" unique_id=1934076895]
 shape = SubResource("SphereShape3D_6t5aa")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1539201621]
+
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

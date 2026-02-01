@@ -2,6 +2,7 @@ shader_type spatial;
 render_mode unshaded;
 
 group_uniforms FlameShape;
+uniform vec3 flamecolor;
 uniform float top_radius : hint_range(0.0, 1.5);
 uniform float bottom_radius : hint_range(0.0, 1.5);
 uniform float center_radius : hint_range(0.0, 5.0);
@@ -15,7 +16,6 @@ group_uniforms;
 group_uniforms FlameAppearance;
 uniform float _speed = 2.0;
 uniform float _scale = 2.0;
-uniform vec3 flamecolor;
 group_uniforms;
 
 varying float cylinderheight;
@@ -218,7 +218,7 @@ void fragment() {
     }else{
         //fire
         float d = pow(getDepth(noise, cutoff, steps),0.7);
-        vec3 hsv = flamecolor;//vec3(d *0.17,0.8 - d/4., d + 0.8);
+        vec3 hsv = vec3(d *flamecolor.x,flamecolor.y - d/4., d + flamecolor.z);//vec3(d *0.17,0.8 - d/4., d + 0.8);
         col = hsv2rgb(hsv);
      }
 

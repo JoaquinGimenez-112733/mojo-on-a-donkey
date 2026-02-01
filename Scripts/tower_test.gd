@@ -3,11 +3,12 @@ extends Node3D
 const BULLET = preload("uid://dyof53uxqmruj")
 var RADIAL = preload("uid://yq1epr2xkufo").instantiate()
 var totem_built = false
-const bullet_damage = 5
+const bullet_damage = 50
 var curr : CharacterBody3D
 var can_shoot : bool = true
 @onready var marker_3d: Marker3D = $TotemContainer/Aim
 @onready var area_attack: Area3D = $TotemContainer/AttackArea
+var current_totem : Node3D
 
 var targets : Array = []
 
@@ -22,6 +23,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if totem_built == true:
 		if is_instance_valid(curr):
+			if current_totem == null:
+				for t in $TotemContainer.get_children():
+					if t.is_in_group("totem"):
+						current_totem = t
+			else:
+				current_totem.look_at(curr.global_position)
+				
 			#$TotemContainer.look_at(curr.global_position)
 			if can_shoot:			
 				_shoot()

@@ -47,4 +47,6 @@ func take_damage(dmg : float):
 	healt -= dmg
 	
 	if healt <= 0:
+		var rand_coins = randi_range(0, 2)
+		BusSignal.notify_coin_update(rand_coins)
 		queue_free()
