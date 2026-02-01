@@ -1,11 +1,13 @@
 extends Node3D
 @onready var statue_2: Node3D = $totem
 const BULLET = preload("uid://dyof53uxqmruj")
+var RADIAL = preload("uid://yq1epr2xkufo").instantiate()
+var totem_built = false
 const bullet_damage = 5
 var curr : CharacterBody3D
 var can_shoot : bool = true
-@onready var marker_3d: Marker3D = $Aim
-@onready var area_attack: Area3D = $totem/AttackArea
+@onready var marker_3d: Marker3D = $TotemContainer/Aim
+@onready var area_attack: Area3D = $TotemContainer/AttackArea
 
 var targets : Array = []
 
@@ -18,40 +20,31 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_instance_valid(curr):
-		$totem.look_at(curr.global_position)
-		if can_shoot:
-			_shoot()
-			can_shoot = false
-			$ShootingCD.start()
-	else:
-		for i in get_node("BulletContainer").get_child_count():
-			get_node("BulletContainer").get_child(i).queue_free()
+	if totem_built == true:
+		if is_instance_valid(curr):
+			#$TotemContainer.look_at(curr.global_position)
+			if can_shoot:			
+				_shoot()
+				can_shoot = false
+				$ShootingCD.start()
+		else:
+			for i in get_node("BulletContainer").get_child_count():
+				get_node("BulletContainer").get_child(i).queue_free()
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is Player:
-		pass
-		#statue_2.visible = true
-		#body.set_can_interact(true)
-
-
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body is Player:
-		pass
-		#body.set_can_interact(false)
-		
+	
 func _on_area_attack_body_exited(body: Node3D) -> void:
 	if body.is_in_group("enemies"):
 		targets.erase(body)
 	#pass
+
 	
 func _shoot():
 	var p : CharacterBody3D = BULLET.instantiate()
 	p.target = curr
 	p.damage = bullet_damage
 	get_node("BulletContainer").add_child(p)
-	p.global_position = $totem/Aim.global_position
+	p.global_position = $TotemContainer/Aim.global_position
 	
 	
 func _on_area_attack_body_entered(body: Node3D) -> void:
@@ -87,3 +80,7 @@ func choose_target(_curr_targets : Array):
 
 func _on_shooting_cd_timeout() -> void:
 	can_shoot = true
+
+
+func _on_area_3d_totembuilt() -> void:
+	totem_built = true

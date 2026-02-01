@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://yq1epr2xkufo"]
+
+[ext_resource type="Script" uid="uid://wipe7wtmime0" path="res://Scripts/radial.gd" id="1_ceeag"]
+[ext_resource type="Texture2D" uid="uid://bcyne32revcdu" path="res://Assets/HUD/coin.png" id="2_jkqqw"]
+[ext_resource type="Texture2D" uid="uid://u65uihpq3xwn" path="res://Assets/HUD/heart.png" id="3_ues7l"]
+
+[node name="Radial" type="Control" unique_id=1133843683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 20.0
+offset_right = -4.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ceeag")
+slices = 3
+icons = Array[Texture2D]([ExtResource("2_jkqqw"), ExtResource("3_ues7l"), ExtResource("2_jkqqw")])
+metadata/_edit_horizontal_guides_ = [-307.0]

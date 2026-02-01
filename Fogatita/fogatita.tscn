@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b11umsmkojcjx"]
+
+[ext_resource type="Shader" uid="uid://ceeow8aln2264" path="res://fogatita.gdshader" id="1_sjmja"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58aoa"]
+render_priority = 0
+shader = ExtResource("1_sjmja")
+shader_parameter/top_radius = 0.2800000133
+shader_parameter/bottom_radius = 0.19200000912
+shader_parameter/center_radius = 0.2030000096425
+shader_parameter/center_position = 0.154000007315
+shader_parameter/cylinder_height = 1.0000000475
+shader_parameter/bottom_curve = 0.4
+shader_parameter/_vibrate_amplitude = 0.017
+shader_parameter/_vibrate_frequency = 200.0
+shader_parameter/_speed = 2.0
+shader_parameter/_scale = 2.0
+shader_parameter/flamecolor = Vector3(1, 0.8, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_erwb0"]
+material = SubResource("ShaderMaterial_58aoa")
+
+[node name="Fogatita" type="Node3D" unique_id=751257262]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=640660278]
+mesh = SubResource("SphereMesh_erwb0")

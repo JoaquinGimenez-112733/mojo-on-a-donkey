@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cthnrno4n2d0k"]
+
+[ext_resource type="Shader" uid="uid://byy7h6oa5aqro" path="res://radialmenu.gdshader" id="1_p1kko"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ccls3"]
+shader = ExtResource("1_p1kko")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/thickness = 0.4
+shader_parameter/ratio = 0.5
+shader_parameter/segment_color = Color(1, 0.886, 0.412, 1)
+shader_parameter/segment_count = 1
+shader_parameter/segment_selected = 0
+
+[node name="RadialMenu" type="Panel" unique_id=1999039377]
+material = SubResource("ShaderMaterial_ccls3")
+offset_left = 466.0
+offset_top = 325.0
+offset_right = 466.0
+offset_bottom = 325.0

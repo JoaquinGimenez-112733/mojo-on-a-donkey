@@ -2,7 +2,8 @@ extends CharacterBody3D
 class_name Player
 const SPEED = 20
 @onready var spring_arm_3d: SpringArm3D = $CameraPivot/SpringArm3D
-
+const RADIAL = preload("uid://yq1epr2xkufo")
+var menu := preload("uid://yq1epr2xkufo").instantiate()
 @onready var hud: Control = $HUD
 @onready var interact_area: Area3D = $InteractArea
 @onready var ring: MeshInstance3D = $Ring
@@ -32,12 +33,6 @@ func _process(delta: float) -> void:
 		inerciando = false
 		var dir := Vector3(input_vec.x, 0, input_vec.y).normalized()
 		target_vel = dir * SPEED
-		#var dir := Vector3(input_vec.x, 0, input_vec.y)
-		#dir = dir.normalized()
-		#velocity += dir * delta * SPEED
-		##velocity.x += clampf(dir.x * delta * SPEED, 0.0, 5000.0)
-		##velocity.y += clampf(dir.y * delta * SPEED, 0.0, 0.0)
-		##velocity.z += clampf(dir.z * delta * SPEED, 0.0, 5000.0)
 		velocity.x = move_toward(velocity.x, target_vel.x, SPEED  * delta)
 		velocity.z = move_toward(velocity.z, target_vel.z, SPEED  * delta)
 	else: 
@@ -46,7 +41,7 @@ func _process(delta: float) -> void:
 			t = get_tree().create_tween()
 			t.set_ease(Tween.EASE_OUT)
 			t.tween_property(self, "velocity", Vector3.ZERO, 0.55 )
-		#velocity = Vector3.ZERO
+
 	
 	if not is_on_floor():
 		velocity.y -= ProjectSettings.get_setting("physics/3d/default_gravity") * delta
@@ -61,30 +56,27 @@ func _unhandled_input(event: InputEvent) -> void:
 			metronomo_ui = METRONOMO.instantiate() as Control
 			get_tree().current_scene.add_child(metronomo_ui)
 			metronomo_ui.buff.connect(_buff_emitter)
-			#metro.is_playing = true
-			#metro.visible = true
+
 			drawn = true
 		else:
 
 			metronomo_ui.queue_free()
 			metronomo_ui = null
-			#metro.is_playing = false
-			#metro.visible = false
+
 			drawn = false
-			
-	#if Input.is_action_just_pressed("INTERACT"):
+
 	if event.is_action_pressed("INTERACT"):
 		
 		var overlapping_areas = interact_area.get_overlapping_areas()
-		
-		#var area_overlapped = overlapping_areas.get(0)
+
 		for area_overlapped in overlapping_areas:
 			if area_overlapped is TowerArea:
 				if area_overlapped.is_built == false:
 					if coins >= 3:
-						coins = clamp(coins - 3, 0, 999)
-						area_overlapped.build_tower()
-						hud.set_text_label(coins)
+						pass
+						#coins = clamp(coins - 3, 0, 999)
+						#area_overlapped.build_tower()
+						#hud.set_text_label(coins)
 
 func _buff_emitter(flag):
 	#ring.visible = flag
