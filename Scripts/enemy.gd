@@ -4,6 +4,7 @@ class_name Enemy
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 var target_pos: Vector3
 var has_target: bool = false
+var healt : float = 20
 
 @export var SPEED: float = 5
 
@@ -40,3 +41,9 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 		
+		
+func take_damage(dmg : float):
+	healt -= dmg
+	
+	if healt <= 0:
+		queue_free()

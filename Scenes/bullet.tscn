@@ -1,21 +1,44 @@
 [gd_scene format=3 uid="uid://dyof53uxqmruj"]
 
 [ext_resource type="Script" uid="uid://cvn40ibo44uxo" path="res://Scripts/bullet.gd" id="1_xjght"]
+[ext_resource type="Shader" uid="uid://c6l2qky74760j" path="res://Scenes/bullet2.gdshader" id="2_oduel"]
+[ext_resource type="PackedScene" uid="uid://dkpv16mkcnw8n" path="res://Assets/Fireball/fire_drop_red.tscn" id="3_ycag2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mw4s"]
-albedo_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycag2"]
+render_priority = 0
+shader = ExtResource("2_oduel")
+shader_parameter/Speed = Vector2(0.2, 0)
+shader_parameter/Emmision_Power = 1.0
+shader_parameter/Twist_Power = 1.0
+shader_parameter/Displace_Power = 0.5
+shader_parameter/Fresnel_Power = 1.0
+shader_parameter/Random_Power = 1.0
+shader_parameter/Fresnel_Color = Color(0, 0, 0, 1)
+shader_parameter/Tail_Displace_Power = 0.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_4mw4s"]
-material = SubResource("StandardMaterial3D_4mw4s")
+material = SubResource("ShaderMaterial_ycag2")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4mw4s"]
+radius = 0.2
 
-[node name="Bullet" type="Area3D" unique_id=473674495]
+[sub_resource type="SphereShape3D" id="SphereShape3D_xjght"]
+
+[node name="Bullet" type="CharacterBody3D" unique_id=2063263083]
 script = ExtResource("1_xjght")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=413619870]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_4mw4s")
+
+[node name="Fire_Drop" parent="." unique_id=1770608368 instance=ExtResource("3_ycag2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1227333987]
 shape = SubResource("SphereShape3D_4mw4s")
+
+[node name="Collision" type="Area3D" parent="." unique_id=1609806516]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision" unique_id=780003647]
+shape = SubResource("SphereShape3D_xjght")
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
