@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b4nifj8f3ti8u"]
+
+[ext_resource type="Texture2D" uid="uid://egfh6sj505cb" path="res://Models/Enemigo/Bad03_concrete_floor_damaged_01_diff_4k.jpg" id="1_n5elt"]
+[ext_resource type="Texture2D" uid="uid://dy3ob7kry40ii" path="res://Models/Enemigo/Bad03_concrete_floor_damaged_01_rough_4k.png" id="2_fny2q"]
+[ext_resource type="Texture2D" uid="uid://tlj50qbfmigi" path="res://Models/Enemigo/Bad03_concrete_floor_damaged_01_nor_gl_4k.png" id="3_5attd"]
+
+[resource]
+resource_name = "mascara"
+cull_mode = 2
+albedo_texture = ExtResource("1_n5elt")
+metallic_texture = ExtResource("2_fny2q")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_fny2q")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_5attd")

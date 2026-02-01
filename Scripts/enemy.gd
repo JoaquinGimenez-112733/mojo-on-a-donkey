@@ -5,11 +5,13 @@ class_name Enemy
 var target_pos: Vector3
 var has_target: bool = false
 var healt : float = 20
+@onready var animP : AnimationPlayer
 
-@export var SPEED: float = 3
+@export var SPEED: float = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	animP = $Bad03.get_node("AnimationPlayer")
 	target_pos = Vector3(0, 0, 0)
 	has_target = true
 	velocity = Vector3.ZERO
@@ -21,6 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if has_target:
+		animP.play("Bad_Caminata_03")
 		nav_agent.target_position = target_pos
 		var next_path_pos := nav_agent.get_next_path_position()
 		var direction := global_position.direction_to(next_path_pos)

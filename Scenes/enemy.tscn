@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bmmjmo4mmr3gq"]
 
 [ext_resource type="Script" uid="uid://dxr3mgdlwhxbg" path="res://Scripts/enemy.gd" id="1_hghv2"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_hghv2"]
+[ext_resource type="PackedScene" uid="uid://h3n4hw5yppmv" path="res://Scenes/Enemiguito.tscn" id="2_1f0kj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]
 radius = 0.5136719
@@ -10,11 +9,8 @@ radius = 0.5136719
 [node name="Enemy" type="CharacterBody3D" unique_id=1086858386 groups=["enemies"]]
 script = ExtResource("1_hghv2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1255003794]
-mesh = SubResource("CapsuleMesh_hghv2")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2006664619]
-transform = Transform3D(0.99985194, -0.017208098, 0, 0.017208098, 0.99985194, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.99985194, -0.017208098, 0, 0.017208098, 0.99985194, 0, 0, 0, 1, 0, 1.0537379, 0)
 shape = SubResource("CapsuleShape3D_1f0kj")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1241366952]
@@ -23,3 +19,6 @@ path_height_offset = 0.25
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 debug_path_custom_point_size = 8.0
+
+[node name="Bad03" parent="." unique_id=307277414 instance=ExtResource("2_1f0kj")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.16281092, 0)
