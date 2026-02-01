@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clro2om5nu55a" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://c26a6nynw4qn4" path="res://Scenes/hud.tscn" id="2_cvnsp"]
 [ext_resource type="Shader" uid="uid://5nnoqbtdvjjd" path="res://Scenes/ring.gdshader" id="3_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://cpxxdsoggient" path="res://Scenes/chamán.tscn" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://dfw0mu58fcils" path="res://Models/Chaman/Chaman.glb" id="5_fkybt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0iea"]
 
@@ -28,9 +28,6 @@ radius = 2.0
 
 [node name="Player" type="CharacterBody3D" unique_id=891889765]
 script = ExtResource("1_v0iea")
-
-[node name="Chamán" parent="." unique_id=1729794515 instance=ExtResource("4_vgqql")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1964397404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.005754, 0)
@@ -66,6 +63,9 @@ mesh = SubResource("PlaneMesh_cvnsp")
 shape = SubResource("SphereShape3D_6t5aa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1539201621]
+
+[node name="Chaman" parent="." unique_id=1768834225 instance=ExtResource("5_fkybt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

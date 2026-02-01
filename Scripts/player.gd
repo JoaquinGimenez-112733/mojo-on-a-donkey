@@ -9,7 +9,7 @@ var menu := preload("uid://yq1epr2xkufo").instantiate()
 @onready var interact_area: Area3D = $InteractArea
 @onready var ring: MeshInstance3D = $Ring
 @onready var buff_area: Area3D = $BuffArea
-@onready var chaman: Node3D = $Chamán
+@onready var chaman: Node3D = $Chaman
 var animP : AnimationPlayer
 var t : Tween
 

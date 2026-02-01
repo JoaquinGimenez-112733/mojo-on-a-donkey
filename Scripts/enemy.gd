@@ -23,7 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if has_target:
-		animP.play("Huesos_Bad2Action")
+		animP.play("Bad_Caminata_03")
 		nav_agent.target_position = target_pos
 		var next_path_pos := nav_agent.get_next_path_position()
 		var direction := global_position.direction_to(next_path_pos)

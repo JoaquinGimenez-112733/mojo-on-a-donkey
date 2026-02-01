@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca6mv582j3hgh"]
 
-[ext_resource type="Script" uid="uid://dxr3mgdlwhxbg" path="res://Scripts/enemy.gd" id="1_cxrxb"]
+[ext_resource type="Script" uid="uid://dn0d8u7pcu8lu" path="res://Scripts/enemy_bad02.gd" id="1_cxrxb"]
 [ext_resource type="PackedScene" uid="uid://ckynfi402yokw" path="res://Models/Enemigo/bad_02.tscn" id="2_cxrxb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1f0kj"]

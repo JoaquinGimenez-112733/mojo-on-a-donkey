@@ -10,6 +10,7 @@ extends Node3D
 
 const ENEMY_BAD_02 = preload("uid://ca6mv582j3hgh")
 const ENEMY_BAD_03 = preload("uid://bmmjmo4mmr3gq")
+const ENEMY_BAD_01 = preload("uid://pij1rga0afhg")
 
 var spawned := 0
 
@@ -29,7 +30,7 @@ func _spawn_enemy():
 	elif ranf > 0.33 and ranf <= 0.66:
 		packed = ENEMY_BAD_03
 	else:
-		packed = ENEMY_BAD_02
+		packed = ENEMY_BAD_01
 	#var enemy = enemy_scene.instantiate()
 	var enemy = packed.instantiate()
 	enemy.global_position = spawn_point.global_position
