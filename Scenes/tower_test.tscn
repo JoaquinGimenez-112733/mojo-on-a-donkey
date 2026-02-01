@@ -30,7 +30,7 @@ debug_color = Color(0.9933798, 0, 0.2452353, 0.41960785)
 transform = Transform3D(0.23570228, 0, -0.23570228, 0, 0.33333334, 0, 0.23570228, 0, 0.23570228, -0.068450004, 0, 0.83152616)
 
 [node name="structure2" parent="TotemContainer" unique_id=412430906 instance=ExtResource("2_jyr3c")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.06369808, 0, -0.8629898)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.06369808, 0, -0.8629898)
 
 [node name="bricks2" parent="." unique_id=724236409 instance=ExtResource("1_1uhhx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

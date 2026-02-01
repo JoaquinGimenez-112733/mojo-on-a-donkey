@@ -42,7 +42,7 @@ func play_build_effect():
 	t.set_trans(Tween.TRANS_BOUNCE)
 	t.tween_property($"../TotemContainer/structure2", "scale", Vector3(0,0,0), 0.65)
 	$"campfire-pit2".get_node("Fire").visible = true
-	t.tween_property(current_totem, "scale", Vector3(0.9,0.9,0.9), 0.65)
+	t.tween_property(current_totem, "scale", Vector3(0.6,0.6,0.6), 0.65)
 	
 func get_buff():
 	print("buffed")

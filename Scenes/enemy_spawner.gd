@@ -25,9 +25,9 @@ func _spawn_enemy():
 		return
 	var ranf = randf_range(0,1)
 	var packed : PackedScene
-	if ranf <= 0.33:
+	if ranf <= 0.6:
 		packed = ENEMY_BAD_02
-	elif ranf > 0.33 and ranf <= 0.66:
+	elif ranf > 0.6 and ranf <= 0.9:
 		packed = ENEMY_BAD_03
 	else:
 		packed = ENEMY_BAD_01
