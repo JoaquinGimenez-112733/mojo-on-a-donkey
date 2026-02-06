@@ -26,7 +26,6 @@ func build_tower(idx : int):
 		elif idx == 2:
 			totem_container.add_child(TOTEM_3_FINAL)
 		play_build_effect()
-		#statue_2.visible = true
 		is_built = true
 		remove_child(RADIAL)
 		
@@ -38,9 +37,7 @@ func play_build_effect():
 		if i.is_in_group("totem"):
 			current_totem = i
 			
-	current_totem.scale = Vector3.ZERO
-	#statue_2.scale = Vector3.ZERO
-	
+	current_totem.scale = Vector3.ZERO	
 	
 	var t = get_tree().create_tween()
 	t.set_ease(Tween.EASE_OUT)
@@ -49,7 +46,14 @@ func play_build_effect():
 	$"campfire-pit2".get_node("Fire").visible = true
 	t.tween_property(current_totem, "scale", Vector3(0.6,0.6,0.6), 0.65)
 	
+func bounce_when_buffed():
+	var t = get_tree().create_tween()
+	t.set_ease(Tween.EASE_IN)
+	t.set_trans(Tween.TRANS_SPRING)
+	t.tween_property(current_totem, "scale", Vector3(0.65,0.65, 0.65), 0.05)
+	t.tween_property(current_totem, "scale", Vector3(0.60,0.60, 0.60), 0.15)
 func get_buff():
+	bounce_when_buffed()
 	print("buffed")
 
 

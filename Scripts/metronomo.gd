@@ -20,6 +20,7 @@ var is_playing : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(scale)
 	beat_len = 60.0 / bpm
 	song.play()
 
@@ -42,6 +43,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			print("HIT")  # acá disparás lo que quieras luego
 			buff.emit(true)
 			correct.play()
+			var mat = guitarra.material as ShaderMaterial
+			mat.set_shader_parameter("flag", true)
+			mat.set_shader_parameter("flag_hit", true)
+			mat.set_shader_parameter("shock_color", Vector3(3,3,0))
+			var t2 = get_tree().create_tween()
+			t2.set_ease(Tween.EASE_IN)
+			t2.set_trans(Tween.TRANS_BOUNCE)
+			t2.tween_property(guitarra, "scale", Vector2(1.15,1.25), 0.05)
+			t2.tween_property(guitarra, "scale", Vector2(1,1), 0.15)
+			await get_tree().create_timer(0.5).timeout
+			mat.set_shader_parameter("flag", false)
+			mat.set_shader_parameter("flag_hit", false)
+			
 			if !song.playing:
 				song.play()
 		else:
@@ -50,6 +64,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			fail.play()
 			var mat = guitarra.material as ShaderMaterial
 			mat.set_shader_parameter("flag", true)
+			mat.set_shader_parameter("shock_color", Vector3(1,0,0))
+			
 			await get_tree().create_timer(0.5).timeout
 			mat.set_shader_parameter("flag", false)
 			

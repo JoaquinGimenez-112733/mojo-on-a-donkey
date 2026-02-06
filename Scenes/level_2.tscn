@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c56qdinor3qmg"]
+
+[ext_resource type="Script" uid="uid://wixvmtyfu511" path="res://Scripts/level_2.gd" id="1_12fag"]
+[ext_resource type="ArrayMesh" uid="uid://bsx1jwyw75ju2" path="res://Models/OBJ/PalmeraCorregida.obj" id="2_1q6tm"]
+[ext_resource type="MeshLibrary" uid="uid://d3bt8k0hr52w0" path="res://MeshLibraries/Suelos.tres" id="3_v36qu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_12fag"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_1q6tm"]
+sky_material = SubResource("ProceduralSkyMaterial_12fag")
+
+[sub_resource type="Environment" id="Environment_v36qu"]
+background_mode = 2
+sky = SubResource("Sky_1q6tm")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level2" type="Node3D" unique_id=428534205]
+script = ExtResource("1_12fag")
+tree_mesh = ExtResource("2_1q6tm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=419203524]
+environment = SubResource("Environment_v36qu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=646104608]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1918762865]
+mesh_library = ExtResource("3_v36qu")
+cell_size = Vector3(2, 0.1, 2)
+data = {
+"cells": PackedInt32Array(3, 65534, 2, 3, 0, 2, 3, 1, 2, 3, 2, 2, 2, 2, 2, 2, 1, 2, 2, 0, 2, 0, 3, 1)
+}
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1813885280]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1450703686]
+transform = Transform3D(1, 0, 0, 0, 0.36098987, 0.93256974, 0, -0.93256974, 0.36098987, 4.9651937, 6.158582, 5.652114)
+
+[node name="UI" type="Control" parent="." unique_id=1303360674]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="UI" unique_id=2034896402]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 57.0
+offset_right = 120.0
+offset_bottom = 88.0
+text = "Restart Test"
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

@@ -11,9 +11,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n682r"]
 shader = ExtResource("5_jd0b1")
 shader_parameter/shock_color = Color(1, 0, 0, 1)
+shader_parameter/hit_color = Color(1, 1, 0, 1)
 shader_parameter/amplitude = 30.0
 shader_parameter/frequecy = 20.0
 shader_parameter/flag = false
+shader_parameter/flag_hit = false
 
 [node name="Metronomo" type="Control" unique_id=1746553637]
 layout_mode = 3
@@ -55,6 +57,7 @@ offset_left = -122.0
 offset_top = -258.0
 offset_right = 217.0
 offset_bottom = 81.0
+pivot_offset = Vector2(173, 173)
 texture = ExtResource("6_b23eu")
 expand_mode = 1
 

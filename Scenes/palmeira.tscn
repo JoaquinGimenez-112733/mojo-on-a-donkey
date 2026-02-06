@@ -9,7 +9,8 @@ radius = 4.0
 
 [node name="Palmeira2" unique_id=982733678 instance=ExtResource("1_l3brm")]
 
-[node name="Palmeira" parent="." index="0" unique_id=2112012394]
+[node name="Palmeira" parent="." index="0" unique_id=1618113169]
+transform = Transform3D(1, 0, 0, 0, 1.2776994, 0, 0, 0, 1, 0, 1.2992208, 0)
 mesh = ExtResource("2_yy5k4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Palmeira" index="0" unique_id=1188929625]
